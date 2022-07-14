@@ -1,0 +1,27 @@
+ 
+  .example-full-width{
+    width: 25vw;
+   
+  }
+  
+  .container{
+    width: 500px;
+    margin: auto;
+    min-height:400px ;
+   padding-top: 25px;
+    box-shadow: 0 4px 8px 0 rgba(46, 47, 39, 0.547);
+    background-color: rgb(254, 255, 246); 
+    margin-top: 15px;
+  }
+  
+  .text{
+    font-size: 25px;
+    font-weight: 500;
+  }
+  .button{
+    background-color: black;
+    color:  rgb(242, 255, 53);
+    width: 190px;
+   margin: auto;
+   border:3px solid  rgb(242, 255, 53);
+  }

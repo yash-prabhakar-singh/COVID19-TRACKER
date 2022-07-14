@@ -1,0 +1,66 @@
+<div class="container" id="{{isLoading && 'loading'}}">
+<div class="header">
+  <p>Covid-19 Cases</p>
+  <h3>(Worldwide)</h3>
+</div>
+<div class="header2">
+   <p>Total confirmed Cases</p>
+   <h2 class="text-white">{{totalCases}}</h2>
+   <br>
+   <br>
+   <div class="d-flex justify-content-between ">
+    <h1><mat-icon>circle</mat-icon> Active</h1> 
+   <p class="text-white">{{activeCases}}</p>
+   </div> 
+   <div class="d-flex justify-content-between ">
+    <h1><mat-icon>circle</mat-icon> Recovered</h1> 
+    <p class="text-white">{{recoveredCases}}</p>
+   </div> 
+   <div class="d-flex justify-content-between ">
+    <h1><mat-icon>circle</mat-icon> Fatal Cases</h1> 
+    <p class="text-white">{{fatalCases}}</p>
+   </div> 
+</div>
+
+<div class="header3 d-flex justify-content-between">
+    <div><p>Country Wise Data</p></div>
+    <div class="input-group rounded">
+     
+      <input type="search" (input)="covidSearch($event)" class="form-control rounded" placeholder="Search"  />
+      <div class="search-icon"> <mat-icon>search</mat-icon></div>
+    </div>
+</div>
+
+<mat-grid-list  class="grid-list" *ngIf="covidDataShow.length>0" cols="{{noOfCols}}" rowHeight="12rem">
+    <!-- <div class=""> -->
+      <mat-grid-tile class="grid-title" *ngFor="let i of covidDataShow; let idx=index">
+        <mat-card class="example-card" >
+          <mat-card-content>
+            <h2 style="text-align: center;">Country : {{i.country}}</h2>
+            <div class="d-flex justify-content-between ">
+               <p>Infected Cases</p>
+               <p>{{i.active}}</p>
+            </div>
+            <div class="d-flex justify-content-between ">
+                <p>Recovered Cases</p>
+                <p>{{i.recovered}}</p>
+             </div>
+             <div class="d-flex justify-content-between ">
+                <p>Fatal Cases</p>
+                <p>{{i.death}}</p>
+             </div>
+             <div class="watchlist-added"  *ngIf="userLoggedIn&&addedCountries.includes(i.country)">Added</div>
+             <div class="watchlist" (click)="updateMethod(i.country, i.moreData)"  *ngIf="userLoggedIn&&!addedCountries.includes(i.country)">+ Watchlist</div>
+            
+          </mat-card-content>
+        
+         </mat-card>
+          
+      </mat-grid-tile>
+      
+    <!-- </div> -->
+      
+      
+    </mat-grid-list>
+
+</div>

@@ -1,0 +1,52 @@
+<div class="container">
+
+  <h1 class="text-center py-2 text">Signup</h1>
+  <div class="d-flex justify-content-center">
+    <form (submit)="register($event)">
+      <div class="form-group">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>First Name</mat-label>
+          <input (input)="updateData($event)" matInput placeholder="First name" name="firstName">
+        </mat-form-field>
+       
+      </div>
+      <div class="form-group">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Last Name</mat-label>
+          <input (input)="updateData($event)" matInput placeholder="Last Name" name="lastName">
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Email</mat-label>
+          <input (input)="updateData($event)" matInput placeholder="email" name="email">
+          <small class="text-danger" *ngIf="emailFlag">Please Enter a Valid Email </small>
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Password</mat-label>
+          <input (input)="updateData($event)" matInput placeholder="password" type="password" name="password">
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Confirm Password</mat-label>
+          <input (input)="updateData($event)" matInput placeholder="password" type="password" name="cnfPassword">
+        </mat-form-field>
+      </div>
+      <div class="col-md-12 text-center">
+        <button type="submit" class="btn btn-primary button ">Signup</button>
+      </div>
+    </form>
+  </div>
+  
+  <div class="text-center py-3">------OR------</div>
+
+  <div class="google-login text-center" (click)=onTest()>
+    <img src="https://cdn.icon-icons.com/icons2/2699/PNG/512/google_logo_icon_169090.png" alt="">
+    Signin with google
+  </div>
+
+  
+</div>

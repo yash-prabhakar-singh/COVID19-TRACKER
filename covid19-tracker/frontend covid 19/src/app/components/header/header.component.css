@@ -1,0 +1,25 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+.tool-bar-row{
+    background-color: rgb(27, 28, 29);
+    color: rgb(242, 255, 53);
+}
+#user-name{
+    cursor: pointer;
+    margin-right: 20px;
+    font-size: 15px;
+}
+.mat-list{
+    min-width: 16vw;
+   min-height:91.2vh;
+  
+  }
+.list-items:hover{
+   color: rgb(255, 0, 0);
+
+}
+.display-area-shrink{
+    width: calc(100%-16vw);
+    left: 16vw;
+}

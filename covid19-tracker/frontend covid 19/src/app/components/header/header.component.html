@@ -1,0 +1,61 @@
+
+<mat-toolbar class="tool-bar-row">
+    <button *ngIf="username.length" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon (click)="sidenav.toggle(); toggleOpen()">menu</mat-icon>
+    </button>
+    <span routerLink="/" style="cursor: pointer;">Covid-19 Tracker</span>
+    <span class="example-spacer"></span>
+    <!-- Before Login or signup -->
+    <div *ngIf="!username.length">
+        <button mat-icon-button routerLink="/login">
+            <mat-icon>login</mat-icon>
+        </button>
+        <span id="user-name"  routerLink="/login">Login</span>
+        <span id="user-name"  routerLink="/signup">Signup</span>
+    </div>
+
+    <!-- After Login or Signup  -->
+    <div *ngIf="username.length">
+        <button mat-icon-button  routerLink="/profile">
+            <mat-icon>person</mat-icon>
+        </button>
+        <span id="user-name" routerLink="/profile">{{username}}</span>
+        <button (click)="logout()" mat-icon-button aria-label="logout button" routerLink="/">
+            <mat-icon>logout</mat-icon>
+        </button>
+        <span id="user-name" (click)="logout()" routerLink="/">Logout</span>
+    </div>
+
+
+</mat-toolbar>
+
+<!-- sidenav -->
+<mat-sidenav-container>
+    <mat-sidenav #sidenav opened="false">
+        <mat-nav-list class="mat-list" (click)="sidenav.toggle(); toggleOpen()">
+            <a mat-list-item class="list-items" routerLink="/profile">
+                <mat-icon>person</mat-icon>&nbsp;Profile
+            </a>
+            <a mat-list-item class="list-items" routerLink="/watchlist">
+                <mat-icon>list</mat-icon>&nbsp;Watchlist
+            </a>
+            <a mat-list-item class="list-items" routerLink="/profile" >
+                <mat-icon>settings</mat-icon>&nbsp;change password
+            </a>
+            <a mat-list-item class="list-items"(click)="logout()">
+                <mat-icon>logout</mat-icon>&nbsp;Logout
+            </a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <!-- [ngClass]="{'display-area-shrink':drawerOpen}"   this is for shrinking the screen  -->
+    <mat-sidenav-content>
+        <div style="min-height:91.3vh;  background-image: linear-gradient(360deg, #f2ffc7, transparent)" >
+          
+            <router-outlet  ></router-outlet>
+           
+            <lib-ng-toast></lib-ng-toast>
+     
+        </div>
+        
+    </mat-sidenav-content>
+</mat-sidenav-container>

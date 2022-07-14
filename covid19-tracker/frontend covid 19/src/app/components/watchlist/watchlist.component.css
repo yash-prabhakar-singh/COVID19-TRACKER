@@ -1,0 +1,50 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    width: 80%;
+    min-height: 80vh;
+}
+.header {
+    border-radius: 20px;
+    min-height:10vh;
+    padding:20px;
+    padding-bottom: 1px;
+    background: rgb(242, 255, 97);
+    color: rgb(0, 0, 0);
+    text-align: left;
+    font-weight: 400;
+   
+  }
+  .example-card {
+    border-radius: 8px;
+    min-width: 100%;
+    margin: 10px;
+    position: relative;
+    background: rgb(43, 42, 42);
+    color: aliceblue;
+   
+   }
+ 
+   .example-spacer {
+     flex: 1 1 auto;
+   }
+   .mat-card-title {
+    
+     display: block;
+     margin-bottom: 10px;
+     font-size: 16px;
+     font-weight: 500;
+         
+ }
+ .watchlist{
+  padding: 1px;
+  background-color: rgb(242, 255, 53);
+  color: black;
+  font-weight: 500;
+  width: 120px;
+  text-align: center;
+  border-radius: 10px;
+  cursor: pointer;
+}
